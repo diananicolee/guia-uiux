@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>UI/UX Design do Zero — Guia Completo para Iniciantes</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --bg: #fcfbff;
+            --fg: #2a2f3d;
+            --mut: #667085;
+            --ac: #5b3df5;
+            --card: #f3f1ff;
+            --bd: #e3e0f7;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px)
+        }
+
+        html {
+            scroll-padding-top: env(safe-area-inset-top, 0px);
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--fg);
+            font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif
+        }
+
+        main {
+            max-width: 820px;
+            margin: auto;
+            padding: 24px 18px 60px
+        }
+
+        h1 {
+            font-size: 2rem;
+            line-height: 1.2;
+            color: var(--ac)
+        }
+
+        h2 {
+            margin-top: 2.6rem;
+            padding-top: .6rem;
+            border-top: 2px solid var(--bd);
+            font-size: 1.45rem
+        }
+
+        h3 {
+            font-size: 1.1rem
+        }
+
+        .sub {
+            color: var(--mut)
+        }
+
+        nav {
+            background: var(--card);
+            border: 1px solid var(--bd);
+            border-radius: 12px;
+            padding: 12px 18px
+        }
+
+        nav ol {
+            columns: 2;
+            margin: 0;
+            padding-left: 1.4em;
+            font-size: .92rem
+        }
+
+        nav a {
+            color: var(--fg);
+            text-decoration: none
+        }
+
+        @media(max-width:560px) {
+            nav ol {
+                columns: 1
+            }
+        }
+
+        .box {
+            border-left: 4px solid var(--ac);
+            background: var(--card);
+            border-radius: 8px;
+            padding: 8px 14px;
+            margin: 14px 0
+        }
+
+        .fim {
+            border: 1px dashed var(--ac);
+            border-radius: 10px;
+            padding: 8px 14px;
+            margin: 18px 0;
+            font-size: .95rem
+        }
+
+        .w {
+            overflow-x: auto
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: .92rem
+        }
+
+        th,
+        td {
+            border: 1px solid var(--bd);
+            padding: 6px 9px;
+            text-align: left;
+            vertical-align: top
+        }
+
+        th {
+            background: var(--card)
+        }
+
+        li {
+            margin: .2em 0
+        }
+
+        code {
+            background: var(--card);
+            padding: 1px 5px;
+            border-radius: 4px
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>UI/UX Design do Zero — Guia Completo para Iniciantes</h1>
+        <p class="sub">Um manual de iniciação profissional em português, sem exigir conhecimento prévio de design ou
+            programação. Cada termo técnico é explicado na primeira vez em que aparece.</p>
+        <div class="box"><b>🎯 Objetivo:</b> entender a profissão, aprender os fundamentos, dominar o básico do Figma,
+            criar projetos, montar um portfólio e buscar a primeira oportunidade.</div>
+        <nav><b>Sumário</b>
+            <ol>
+                <li><a href="#m1">O que é UI/UX</a></li>
+                <li><a href="#m2">Rotina do designer</a></li>
+                <li><a href="#m3">Entregáveis</a></li>
+                <li><a href="#m4">Ferramentas e Figma</a></li>
+                <li><a href="#m5">Materiais e recursos</a></li>
+                <li><a href="#m6">Fundamentos de UI</a></li>
+                <li><a href="#m7">Fundamentos de UX</a></li>
+                <li><a href="#m8">Processo completo</a></li>
+                <li><a href="#m9">Projeto do zero</a></li>
+                <li><a href="#m10">Criando telas</a></li>
+                <li><a href="#m11">Responsividade</a></li>
+                <li><a href="#m12">Acessibilidade</a></li>
+                <li><a href="#m13">Design System</a></li>
+                <li><a href="#m14">Design e programação</a></li>
+                <li><a href="#m15">Tipos de produto</a></li>
+                <li><a href="#m16">Portfólio</a></li>
+                <li><a href="#m17">Projetos para praticar</a></li>
+                <li><a href="#m18">Plano de 12 semanas</a></li>
+                <li><a href="#m19">Roteiro de Figma</a></li>
+                <li><a href="#m20">Primeiro trabalho</a></li>
+                <li><a href="#m21">Apresentação profissional</a></li>
+                <li><a href="#m22">Currículo</a></li>
+                <li><a href="#m23">Habilidades</a></li>
+                <li><a href="#m24">Preciso saber desenhar?</a></li>
+                <li><a href="#m25">Preciso de matemática?</a></li>
+                <li><a href="#m26">Preciso programar?</a></li>
+                <li><a href="#m27">Erros comuns</a></li>
+                <li><a href="#m28">Glossário</a></li>
+                <li><a href="#m29">Checklist</a></li>
+                <li><a href="#m30">Roadmap</a></li>
+                <li><a href="#fim">Se eu estivesse começando hoje</a></li>
+            </ol>
+        </nav>
+
+        <h2 id="m1">1. O que é UI/UX Design?</h2>
+        <p><b>UI</b> (User Interface, "interface do usuário") é a parte que você vê e toca: botões, cores, textos,
+            ícones, telas. <b>UX</b> (User Experience, "experiência do usuário") é como a pessoa se sente e se sai ao
+            usar o produto: ela consegue o que queria, rápido e sem frustração?</p>
+        <p><b>Analogia:</b> numa casa, a UI é a decoração e a aparência; a UX é a planta — se dá para ir do quarto ao
+            banheiro sem tropeçar.</p>
+        <div class="w">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>UI Designer</th>
+                    <th>UX Designer</th>
+                    <th>UI/UX Designer</th>
+                </tr>
+                <tr>
+                    <td>Foco</td>
+                    <td>Aparência e interação visual</td>
+                    <td>Problemas, fluxos e usabilidade</td>
+                    <td>Os dois, de ponta a ponta</td>
+                </tr>
+                <tr>
+                    <td>Faz</td>
+                    <td>Cores, tipografia, componentes, telas</td>
+                    <td>Pesquisa, personas, fluxos, wireframes, testes</td>
+                    <td>Pesquisa até tela final e protótipo</td>
+                </tr>
+            </table>
+        </div>
+        <p><b>Como trabalham juntos:</b> o UX decide <i>o que</i> a tela precisa permitir e em que ordem; a UI decide
+            <i>como</i> isso é apresentado de forma clara e agradável.</p>
+        <p><b>O que NÃO é UI/UX:</b> não é só "deixar bonito", não é só usar Figma, não é programar e não é opinião
+            pessoal — decisões se baseiam em usuários e dados.</p>
+        <h3>Exemplos do cotidiano</h3>
+        <ul>
+            <li><b>App de banco:</b> mostrar o saldo claramente e pedir confirmação antes de uma transferência (UX);
+                usar cores de alerta para erros (UI).</li>
+            <li><b>Instagram:</b> o botão de curtir fica ao alcance do polegar e responde na hora.</li>
+            <li><b>Loja virtual:</b> checkout curto, com poucos campos e frete visível antes do pagamento.</li>
+            <li><b>Transporte e comida:</b> mapa, preço e tempo estimado em destaque; acompanhamento do pedido em tempo
+                real.</li>
+            <li><b>Sistema de faculdade:</b> notas e horários encontrados em dois toques, não em cinco menus.</li>
+        </ul>
+        <div class="box"><b>💡 Interface bonita × bonita, clara e fácil de usar:</b> a primeira impressiona no print; a
+            segunda funciona na vida real. Um botão elegante, com texto cinza-claro sobre fundo branco, é bonito e
+            ilegível.</div>
+        <div class="fim"><b>Resumo:</b> UI é o visual; UX é a experiência; juntos resolvem problemas reais. <b>📝
+                Exercício:</b> escolha um app que você usa e liste 3 acertos de UI e 3 de UX. <b>Revisão:</b> qual a
+            diferença entre UI e UX? <b>Próximo passo:</b> módulo 2.</div>
+
+        <h2 id="m2">2. O que faz um UI/UX Designer no dia a dia?</h2>
+        <ul>
+            <li><b>Pesquisa e entrevistas:</b> conversar com usuários para entender suas dores.</li>
+            <li><b>Análise e identificação de problemas:</b> dados, reclamações, observação.</li>
+            <li><b>Personas e jornada:</b> perfis fictícios baseados em pesquisa e o caminho percorrido por eles.</li>
+            <li><b>Arquitetura da informação e fluxos:</b> organizar conteúdo e telas.</li>
+            <li><b>Wireframes, interfaces e protótipos:</b> esboços, telas finais e versões clicáveis.</li>
+            <li><b>Testes e feedback:</b> observar pessoas usando e melhorar.</li>
+            <li><b>Documentação, apresentação e comunicação:</b> com desenvolvedores, <b>Product Manager</b> (PM,
+                responsável pela estratégia do produto) e <b>Product Owner</b> (PO, responsável por priorizar o que será
+                construído).</li>
+        </ul>
+        <div class="box"><b>🚀 Na prática — um dia num app de entregas:</b> 9h reunião diária com a equipe; 10h revisão
+            de dados (muitos abandonos no pagamento); 11h conversa com 2 usuários; 14h esboço de wireframes de um
+            checkout mais curto; 16h ajuste de telas no Figma; 17h tira dúvidas de um desenvolvedor.</div>
+        <div class="fim"><b>Resumo:</b> a rotina mistura pesquisar, desenhar, testar e conversar. <b>📝 Exercício:</b>
+            monte a rotina de um dia de trabalho num app que você use. <b>Próximo passo:</b> módulo 3.</div>
+
+        <h2 id="m3">3. O que um UI/UX Designer produz?</h2>
+        <div class="w">
+            <table>
+                <tr>
+                    <th>Entregável</th>
+                    <th>O que é / Para que serve</th>
+                    <th>Quando</th>
+                    <th>Exemplo</th>
+                </tr>
+                <tr>
+                    <td>Briefing</td>
+                    <td>Documento com objetivo, público e restrições</td>
+                    <td>Início</td>
+                    <td>"App de estoque para mercadinhos"</td>
+                </tr>
+                <tr>
+                    <td>Pesquisa de usuário</td>
+                    <td>Entrevistas e questionários para entender necessidades</td>
+                    <td>Início</td>
+                    <td>5 entrevistas com donos de lojas</td>
+                </tr>
+                <tr>
+                    <td>Persona</td>
+                    <td>Perfil fictício baseado em dados reais</td>
+                    <td>Após pesquisa</td>
+                    <td>"Marta, 45, dona de padaria"</td>
+                </tr>
+                <tr>
+                    <td>Mapa de empatia</td>
+                    <td>O que o usuário pensa, sente, diz e faz</td>
+                    <td>Síntese</td>
+                    <td>Quadro de 4 quadrantes</td>
+                </tr>
+                <tr>
+                    <td>Jornada / mapa de jornada</td>
+                    <td>Etapas que a pessoa percorre, com emoções e dores</td>
+                    <td>Síntese</td>
+                    <td>Do "acabou o produto" ao "repor"</td>
+                </tr>
+                <tr>
+                    <td>Arquitetura da informação / sitemap</td>
+                    <td>Organização e hierarquia do conteúdo; mapa de telas</td>
+                    <td>Estruturação</td>
+                    <td>Home, Produtos, Relatórios</td>
+                </tr>
+                <tr>
+                    <td>User flow</td>
+                    <td>Diagrama dos passos para cumprir uma tarefa</td>
+                    <td>Estruturação</td>
+                    <td>Login → Home → Cadastrar produto</td>
+                </tr>
+                <tr>
+                    <td>Wireframe (baixa/alta fidelidade)</td>
+                    <td>Esqueleto da tela; baixa = rabiscos simples, alta = com medidas e textos reais, sem estilo final
+                    </td>
+                    <td>Projeto</td>
+                    <td>Caixas e linhas</td>
+                </tr>
+                <tr>
+                    <td>Mockup</td>
+                    <td>Tela com visual final (cores, fontes, imagens), ainda estática</td>
+                    <td>UI</td>
+                    <td>Tela de login pronta</td>
+                </tr>
+                <tr>
+                    <td>Protótipo (baixa/alta)</td>
+                    <td>Versão clicável que simula o uso</td>
+                    <td>Teste</td>
+                    <td>Navegar entre telas no Figma</td>
+                </tr>
+                <tr>
+                    <td>Design system, style guide, biblioteca</td>
+                    <td>Regras e peças reutilizáveis (ver módulo 13)</td>
+                    <td>Escala</td>
+                    <td>Botão primário padrão</td>
+                </tr>
+                <tr>
+                    <td>Documentação e teste de usabilidade</td>
+                    <td>Registro das decisões; observação de pessoas usando</td>
+                    <td>Validação</td>
+                    <td>Teste com 5 pessoas</td>
+                </tr>
+                <tr>
+                    <td>Handoff</td>
+                    <td>Entrega organizada ao desenvolvimento</td>
+                    <td>Final</td>
+                    <td>Arquivo com medidas e componentes</td>
+                </tr>
+            </table>
+        </div>
+        <div class="box"><b>Evolução:</b> Wireframe (planta) → Mockup (visual final) → Protótipo (clicável) → Produto
+            desenvolvido (código funcionando).</div>
+        <div class="fim"><b>Resumo:</b> cada entregável reduz risco antes de gastar com programação. <b>📝
+                Exercício:</b> desenhe à mão um wireframe de uma tela de login. <b>Próximo passo:</b> módulo 4.</div>
+
+        <h2 id="m4">4. Ferramentas utilizadas</h2>
+        <div class="w">
+            <table>
+                <tr>
+                    <th>Ferramenta</th>
+                    <th>Para que serve</th>
+                    <th>Preço</th>
+                    <th>Dificuldade</th>
+                    <th>Iniciante?</th>
+                </tr>
+                <tr>
+                    <td>Figma</td>
+                    <td>Design de interfaces, protótipos, design systems</td>
+                    <td>Plano gratuito + pagos</td>
+                    <td>Média</td>
+                    <td>Essencial</td>
+                </tr>
+                <tr>
+                    <td>FigJam</td>
+                    <td>Quadro colaborativo: fluxos, brainstorm</td>
+                    <td>Gratuito + pagos</td>
+                    <td>Baixa</td>
+                    <td>Útil</td>
+                </tr>
+                <tr>
+                    <td>Miro</td>
+                    <td>Quadro online para workshops e mapas</td>
+                    <td>Gratuito + pagos</td>
+                    <td>Baixa</td>
+                    <td>Opcional</td>
+                </tr>
+                <tr>
+                    <td>Photoshop / Illustrator</td>
+                    <td>Edição de imagens / ilustração vetorial</td>
+                    <td>Pagos (Adobe)</td>
+                    <td>Média/Alta</td>
+                    <td>Opcional</td>
+                </tr>
+                <tr>
+                    <td>Notion</td>
+                    <td>Documentação e organização</td>
+                    <td>Plano gratuito + pagos</td>
+                    <td>Baixa</td>
+                    <td>Útil</td>
+                </tr>
+                <tr>
+                    <td>Trello / Jira</td>
+                    <td>Gestão de tarefas (Jira é comum em equipes de tecnologia)</td>
+                    <td>Gratuito + pagos</td>
+                    <td>Baixa / Média</td>
+                    <td>Conhecer</td>
+                </tr>
+                <tr>
+                    <td>Testes e pesquisa</td>
+                    <td>Plataformas de teste de usabilidade e formulários (ex.: Google Forms, Maze)</td>
+                    <td>Variam</td>
+                    <td>Baixa</td>
+                    <td>Útil</td>
+                </tr>
+                <tr>
+                    <td>Ferramentas de IA</td>
+                    <td>Apoio para ideias, textos e resumos de pesquisa</td>
+                    <td>Variam</td>
+                    <td>Baixa</td>
+                    <td>Apoio — nunca substitui pesquisa real</td>
+                </tr>
+            </table>
+        </div>
+        <p class="sub">Planos e preços mudam; confira no site oficial de cada ferramenta.</p>
+        <h3>Figma em destaque</h3>
+        <ul>
+            <li><b>Interface:</b> canvas (área de trabalho), painel de camadas à esquerda, propriedades à direita.</li>
+            <li><b>Frame:</b> a "prancheta" de uma tela. <b>Section:</b> agrupa frames. <b>Layers:</b> lista de
+                elementos.</li>
+            <li><b>Shapes e Text:</b> formas e textos, os blocos básicos.</li>
+            <li><b>Component:</b> elemento reutilizável; <b>Variants:</b> versões dele (ex.: botão ativo/desabilitado).
+            </li>
+            <li><b>Auto Layout:</b> o elemento se ajusta ao conteúdo e organiza espaçamentos sozinho.</li>
+            <li><b>Constraints:</b> como um item se comporta ao redimensionar o frame.</li>
+            <li><b>Styles e Variables:</b> cores, textos e valores reutilizáveis.</li>
+            <li><b>Prototype:</b> conecta telas com interações. <b>Dev Mode:</b> visão para desenvolvedores.
+                <b>Libraries:</b> bibliotecas compartilhadas.</li>
+        </ul>
+        <div class="box"><b>💡 Aprenda primeiro:</b> Frames, formas, texto, imagens, layers, componentes, Auto Layout e
+            protótipo simples. <b>Deixe para depois:</b> Variables avançadas, tokens, Dev Mode, bibliotecas complexas.
+        </div>
+        <div class="fim"><b>Resumo:</b> Figma + um quadro de ideias bastam para começar. <b>📝 Exercício:</b> crie uma
+            conta no Figma e desenhe um frame de celular com um botão. <b>Próximo passo:</b> módulo 5.</div>
+
+        <h2 id="m5">5. Materiais e recursos</h2>
+        <p>Referências visuais (Behance, Dribbble, Mobbin), imagens, ícones, fontes, paletas, grids, componentes,
+            templates, fluxogramas, protótipos, pesquisas, entrevistas, questionários, testes e documentação formam o
+            "material de trabalho".</p>
+        <div class="box"><b>⚠️ Atenção:</b> verifique sempre a licença. Fontes e ícones gratuitos costumam ter regras de
+            uso. Opções comuns e legais: Google Fonts, Unsplash, Pexels, Material Symbols, Lucide, Phosphor e a Figma
+            Community (confira cada licença). Use referências para se inspirar, nunca para copiar.</div>
+        <div class="fim"><b>Resumo:</b> bons recursos acompanham licença clara. <b>📝 Exercício:</b> monte uma pasta de
+            referências com 10 telas e anote o que funciona em cada uma. <b>Próximo passo:</b> módulo 6.</div>
+
+        <h2 id="m6">6. Fundamentos de UI Design</h2>
+        <h3>Cores</h3>
+        <p>O <b>círculo cromático</b> organiza as cores: primárias (vermelho, amarelo, azul), secundárias (mistura de
+            duas primárias) e terciárias (primária + secundária vizinha). <b>Complementares</b> ficam opostas no círculo
+            (alto contraste); <b>análogas</b> ficam lado a lado (harmonia).</p>
+        <ul>
+            <li><b>Contraste:</b> diferença entre texto e fundo; o mínimo recomendado pela WCAG (norma internacional de
+                acessibilidade) é 4,5:1 para texto comum.</li>
+            <li><b>Significado:</b> varia por cultura; vermelho costuma indicar erro/perigo, verde sucesso, amarelo
+                atenção.</li>
+            <li><b>Paleta:</b> principal (cor da marca), secundária (apoio), neutras (cinzas) e de estado (sucesso,
+                erro, aviso, informação).</li>
+            <li><b>Formatos:</b> HEX (<code>#5B3DF5</code>), RGB (vermelho, verde, azul de 0 a 255) e HSL (matiz,
+                saturação, luminosidade — o mais intuitivo para ajustes).</li>
+        </ul>
+        <h3>Tipografia</h3>
+        <p>Famílias: <b>serifadas</b> (com "perninhas", ex.: Times), <b>sem serifa</b> (ex.: Inter, Roboto — comuns em
+            interfaces) e <b>display</b> (decorativas, só para títulos). Controle <b>peso</b>, <b>tamanho</b>, <b>altura
+                de linha</b> e <b>espaçamento entre letras</b>. Use no máximo 2 fontes.</p>
+        <div class="w">
+            <table>
+                <tr>
+                    <th>Nível</th>
+                    <th>Exemplo (mobile)</th>
+                </tr>
+                <tr>
+                    <td>H1</td>
+                    <td>28–32 px, negrito</td>
+                </tr>
+                <tr>
+                    <td>H2</td>
+                    <td>22–24 px, semibold</td>
+                </tr>
+                <tr>
+                    <td>H3</td>
+                    <td>18–20 px, semibold</td>
+                </tr>
+                <tr>
+                    <td>Corpo</td>
+                    <td>16 px, altura de linha 1,5</td>
+                </tr>
+                <tr>
+                    <td>Legenda</td>
+                    <td>12–14 px</td>
+                </tr>
+            </table>
+        </div>
+        <h3>Espaçamento e layout</h3>
+        <p><b>Padding</b> é o espaço interno; <b>margin</b>, o externo; <b>gap</b>, o intervalo entre itens. Use uma
+            escala consistente (ex.: múltiplos de 8: 8, 16, 24, 32). <b>Grid</b> é a grade de colunas que alinha tudo.
+            Princípios: <b>proximidade</b> (itens relacionados juntos), <b>alinhamento</b>, <b>repetição</b>,
+            <b>contraste</b>, <b>hierarquia</b> e <b>equilíbrio</b>.</p>
+        <h3>Componentes</h3>
+        <p><b>Botão</b> (ação), <b>input</b> (campo de texto), <b>checkbox</b> (várias opções), <b>radio</b> (uma
+            opção), <b>select</b> (lista suspensa), <b>card</b> (bloco de conteúdo), <b>navbar/menu</b> (navegação),
+            <b>modal</b> (janela sobre a tela), <b>toast</b> (aviso rápido que some), <b>tooltip</b> (dica ao passar o
+            mouse), <b>tabela</b> e <b>formulário</b>.</p>
+        <div class="fim"><b>Resumo:</b> cor, tipografia, espaço e componentes consistentes criam clareza. <b>📝
+                Exercício:</b> crie uma paleta de 5 cores e uma hierarquia tipográfica com 1 fonte. <b>Revisão:</b> o
+            que é contraste e por que importa? <b>Próximo passo:</b> módulo 7.</div>
+
+        <h2 id="m7">7. Fundamentos de UX Design</h2>
+        <p>Conceitos: <b>usuário</b>, <b>problema</b>, <b>necessidade</b>, <b>contexto</b> (onde e como usa),
+            <b>usabilidade</b> (facilidade de uso), <b>acessibilidade</b>, <b>navegação</b>, <b>feedback</b> (o sistema
+            responde à ação), <b>consistência</b>, <b>prevenção e recuperação de erros</b>, <b>affordance</b> (o objeto
+            sugere como usar, como um botão com aparência de clicável) e <b>carga cognitiva</b> (esforço mental
+            exigido).</p>
+        <h3>As 10 heurísticas de Jakob Nielsen</h3>
+        <div class="w">
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Heurística</th>
+                    <th>Exemplo simples</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Visibilidade do status do sistema</td>
+                    <td>Barra de progresso no upload</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Correspondência com o mundo real</td>
+                    <td>Ícone de lixeira para excluir</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Controle e liberdade do usuário</td>
+                    <td>Botão "Desfazer"</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Consistência e padrões</td>
+                    <td>Mesmo ícone de busca em todas as telas</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Prevenção de erros</td>
+                    <td>Confirmar antes de apagar</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Reconhecimento em vez de memorização</td>
+                    <td>Lista de pesquisas recentes</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Flexibilidade e eficiência de uso</td>
+                    <td>Atalhos de teclado</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Design estético e minimalista</td>
+                    <td>Tela sem excesso de informação</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Ajudar a reconhecer e corrigir erros</td>
+                    <td>"Senha precisa de 8 caracteres" em vez de "Erro 402"</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Ajuda e documentação</td>
+                    <td>Central de ajuda pesquisável</td>
+                </tr>
+            </table>
+        </div>
+        <div class="fim"><b>Resumo:</b> UX é reduzir esforço e frustração. <b>📝 Exercício:</b> avalie um app com as 10
+            heurísticas e anote 3 violações. <b>Próximo passo:</b> módulo 8.</div>
+
+        <h2 id="m8">8. Processo completo de UX/UI</h2>
+        <div class="w">
+            <table>
+                <tr>
+                    <th>Etapa</th>
+                    <th>Objetivo e atividades</th>
+                    <th>Ferramentas / documentos</th>
+                    <th>Resultado</th>
+                </tr>
+                <tr>
+                    <td>1. Descobrir</td>
+                    <td>Entender contexto e negócio; briefing</td>
+                    <td>Notion, reuniões</td>
+                    <td>Problema inicial</td>
+                </tr>
+                <tr>
+                    <td>2. Pesquisar</td>
+                    <td>Entrevistas, questionários, análise de concorrentes</td>
+                    <td>Google Forms, FigJam</td>
+                    <td>Insights</td>
+                </tr>
+                <tr>
+                    <td>3. Definir</td>
+                    <td>Personas, jornada, problema claro</td>
+                    <td>FigJam, Miro</td>
+                    <td>Problema e público definidos</td>
+                </tr>
+                <tr>
+                    <td>4. Idear</td>
+                    <td>Brainstorm de soluções e priorização</td>
+                    <td>FigJam</td>
+                    <td>Funcionalidades escolhidas</td>
+                </tr>
+                <tr>
+                    <td>5. Estruturar</td>
+                    <td>Arquitetura da informação, sitemap, fluxos</td>
+                    <td>FigJam</td>
+                    <td>Mapa e fluxos</td>
+                </tr>
+                <tr>
+                    <td>6. Projetar</td>
+                    <td>Wireframes e UI</td>
+                    <td>Figma</td>
+                    <td>Telas finais</td>
+                </tr>
+                <tr>
+                    <td>7. Prototipar</td>
+                    <td>Conectar telas</td>
+                    <td>Figma Prototype</td>
+                    <td>Protótipo clicável</td>
+                </tr>
+                <tr>
+                    <td>8. Testar</td>
+                    <td>Observar usuários com tarefas</td>
+                    <td>Roteiro de teste</td>
+                    <td>Lista de problemas</td>
+                </tr>
+                <tr>
+                    <td>9. Melhorar</td>
+                    <td>Corrigir e retestar</td>
+                    <td>Figma</td>
+                    <td>Versão melhorada</td>
+                </tr>
+                <tr>
+                    <td>10. Entregar</td>
+                    <td>Handoff e acompanhamento</td>
+                    <td>Dev Mode, documentação</td>
+                    <td>Produto implementado</td>
+                </tr>
+            </table>
+        </div>
+        <p class="sub">O processo não é linear: é comum voltar etapas conforme se aprende.</p>
+        <div class="fim"><b>Resumo:</b> do problema ao produto, passo a passo. <b>Próximo passo:</b> aplicar tudo num
+            projeto.</div>
+
+        <h2 id="m9">9. Como criar um projeto do zero</h2>
+        <p>Exemplo: <b>aplicativo de gerenciamento de estoque para pequenos negócios.</b></p>
+        <ol>
+            <li><b>Problema:</b> donos de lojas pequenas controlam estoque em caderno e perdem vendas por falta de
+                produtos.</li>
+            <li><b>Público:</b> microempreendedores com pouco tempo e pouca familiaridade com tecnologia.</li>
+            <li><b>Personas:</b> crie 2 baseadas nas entrevistas.</li>
+            <li><b>Hipótese:</b> "Se o dono registrar entradas e saídas em até 3 toques, ele manterá o estoque
+                atualizado."</li>
+            <li><b>Pesquisa:</b> 5 entrevistas e análise de 3 apps concorrentes.</li>
+            <li><b>Funcionalidades (MVP, versão mínima):</b> cadastrar produto, registrar entrada/saída, alerta de
+                estoque baixo.</li>
+            <li><b>Arquitetura da informação:</b> Início, Produtos, Movimentações, Alertas, Perfil.</li>
+            <li><b>User flow:</b> Abrir app → Registrar saída → Confirmar → Ver estoque atualizado.</li>
+            <li><b>Wireframes:</b> 5–8 telas em baixa fidelidade.</li>
+            <li><b>Identidade visual:</b> 1 cor principal, neutros, 1 fonte, ícones.</li>
+            <li><b>Design system básico:</b> cores, textos, botões, inputs, cards.</li>
+            <li><b>Telas no Figma:</b> com componentes e Auto Layout.</li>
+            <li><b>Protótipo:</b> fluxo principal clicável.</li>
+            <li><b>Teste de usabilidade:</b> 5 pessoas; tarefa: "registre a venda de 2 unidades".</li>
+            <li><b>Correções:</b> priorize problemas que impedem a tarefa.</li>
+            <li><b>Versão final.</b></li>
+            <li><b>Apresentação:</b> slides contando a história.</li>
+            <li><b>Case:</b> publique conforme o módulo 16.</li>
+        </ol>
+        <div class="box"><b>📝 Exercício:</b> execute os passos 1 a 4 para o seu projeto. <b>🚀 Na prática:</b> comece
+            pequeno: poucas telas bem pensadas valem mais que muitas rasas.</div>
+
+        <h2 id="m10">10. Como criar telas de aplicativos</h2>
+        <p>Antes de desenhar, responda: qual o <b>objetivo</b> da tela? Quem é o <b>usuário</b>? Qual a <b>ação
+                principal</b> (um botão em destaque) e quais as <b>secundárias</b>? Como a pessoa chega e sai? Que
+            conteúdo é essencial? Planeje também os <b>estados</b>: vazio (nada cadastrado ainda), carregando, erro (com
+            mensagem útil), sucesso e confirmação.</p>
+        <div class="w">
+            <table>
+                <tr>
+                    <th>Tela</th>
+                    <th>Pontos de atenção</th>
+                </tr>
+                <tr>
+                    <td>Login / Cadastro</td>
+                    <td>Poucos campos, mostrar/ocultar senha, erros claros, "esqueci a senha"</td>
+                </tr>
+                <tr>
+                    <td>Home / Dashboard</td>
+                    <td>Informação mais importante primeiro; indicadores legíveis</td>
+                </tr>
+                <tr>
+                    <td>Perfil / Configurações</td>
+                    <td>Agrupar opções; destacar ações destrutivas</td>
+                </tr>
+                <tr>
+                    <td>Busca / Detalhes</td>
+                    <td>Sugestões, filtros, resultado vazio útil; ação principal visível</td>
+                </tr>
+                <tr>
+                    <td>Formulário</td>
+                    <td>Rótulos claros, validação em tempo real, agrupamento</td>
+                </tr>
+                <tr>
+                    <td>Carrinho / Checkout</td>
+                    <td>Total e frete claros, poucos passos, confirmação final</td>
+                </tr>
+            </table>
+        </div>
+        <div class="fim"><b>📝 Exercício:</b> escolha uma tela e desenhe todos os seus estados. <b>Próximo passo:</b>
+            módulo 11.</div>
+
+        <h2 id="m11">11. Responsividade</h2>
+        <p><b>Design responsivo</b> é adaptar a interface a diferentes tamanhos de tela. <b>Breakpoints</b> são as
+            larguras em que o layout muda (valores comuns: ~360–430 px celular, ~768 px tablet, ~1024 px notebook, 1280
+            px+ desktop). O <b>grid</b> muda de poucas colunas (celular) para mais (desktop) e os componentes se
+            reorganizam: menu inferior vira menu lateral, listas viram tabelas. <b>Mobile first</b> significa começar
+            pelo celular — força a priorizar o essencial — e depois expandir.</p>
+        <div class="fim"><b>📝 Exercício:</b> adapte uma tela de celular para desktop no Figma.</div>
+
+        <h2 id="m12">12. Acessibilidade</h2>
+        <p>Acessibilidade digital permite que todos usem o produto, incluindo pessoas com deficiência visual, motora,
+            auditiva ou cognitiva — e também quem está ao sol, com uma mão ocupada ou com internet lenta.</p>
+        <ul>
+            <li><b>Contraste e legibilidade:</b> texto a partir de 16 px e contraste adequado.</li>
+            <li><b>Cores:</b> nunca use só a cor para transmitir informação (adicione ícone ou texto).</li>
+            <li><b>Teclado e foco:</b> tudo deve ser alcançável por Tab, com <b>estado de foco</b> visível.</li>
+            <li><b>Leitores de tela:</b> software que lê a tela em voz alta; use <b>texto alternativo</b> nas imagens.
+            </li>
+            <li><b>Formulários:</b> rótulo sempre visível e erros que dizem como corrigir.</li>
+            <li><b>Botões:</b> área de toque confortável (cerca de 44×44 px) e textos descritivos.</li>
+        </ul>
+        <div class="box"><b>💡</b> Acessibilidade melhora a usabilidade para todos — é parte de um bom UX, não um extra.
+        </div>
+
+        <h2 id="m13">13. Design System</h2>
+        <p><b>Design System</b> é um conjunto de regras, componentes e documentação que garante consistência e acelera o
+            trabalho. Empresas o usam para criar mais rápido e manter a mesma identidade. O <b>Style Guide</b> documenta
+            o visual (cores, fontes, logos); o Design System inclui isso <i>mais</i> componentes, comportamentos e
+            código. <b>Tokens</b> são valores nomeados (ex.: <code>cor-primaria</code>, <code>espaco-16</code>) usados
+            em vez de números soltos.</p>
+        <p><b>Mini Design System no Figma:</b> 1) defina cores, textos e espaços como Styles/Variables; 2) crie botão,
+            input e card como componentes; 3) crie variantes (padrão, hover, desabilitado, erro); 4) documente quando
+            usar cada um.</p>
+
+        <h2 id="m14">14. UI/UX e programação</h2>
+        <ul>
+            <li><b>HTML:</b> estrutura da página. <b>CSS:</b> aparência. <b>JavaScript:</b> comportamento. <b>React:</b>
+                biblioteca JavaScript para montar interfaces com componentes.</li>
+            <li><b>Front-end:</b> o que o usuário vê; <b>back-end:</b> servidor e dados; <b>API:</b> ponte que permite
+                aos dois conversarem; <b>mobile:</b> apps nativos ou multiplataforma.</li>
+        </ul>
+        <p>O UI/UX Designer <b>não precisa ser programador</b>. Mas HTML e CSS ajudam a entender limitações,
+            comunicar-se melhor e propor soluções viáveis — um diferencial.</p>
+        <div class="w">
+            <table>
+                <tr>
+                    <th>UI/UX Designer</th>
+                    <th>Front-end Developer</th>
+                </tr>
+                <tr>
+                    <td>Pesquisa, projeta, testa</td>
+                    <td>Transforma o design em código funcional</td>
+                </tr>
+                <tr>
+                    <td>Entrega telas, componentes, fluxos, especificações (<b>handoff</b>)</td>
+                    <td>Entrega a interface implementada</td>
+                </tr>
+            </table>
+        </div>
+        <p>Trabalham juntos em revisões, alinhamentos e ajustes. No handoff, o designer entrega: telas, medidas, cores,
+            fontes, estados, comportamentos e arquivos organizados.</p>
+
+        <h2 id="m15">15. UI/UX em apps, sites e sistemas</h2>
+        <div class="w">
+            <table>
+                <tr>
+                    <th>Produto</th>
+                    <th>Prioridade de design</th>
+                </tr>
+                <tr>
+                    <td>Site institucional</td>
+                    <td>Credibilidade, clareza da mensagem, contato fácil</td>
+                </tr>
+                <tr>
+                    <td>Loja virtual</td>
+                    <td>Busca, confiança, checkout simples</td>
+                </tr>
+                <tr>
+                    <td>App mobile</td>
+                    <td>Uso com uma mão, tarefas rápidas</td>
+                </tr>
+                <tr>
+                    <td>Sistema empresarial / estoque</td>
+                    <td>Eficiência, tabelas, formulários, uso repetido</td>
+                </tr>
+                <tr>
+                    <td>Dashboard</td>
+                    <td>Visualização clara de dados e prioridade</td>
+                </tr>
+                <tr>
+                    <td>Sistema acadêmico</td>
+                    <td>Muitos perfis (aluno, professor), acesso rápido</td>
+                </tr>
+                <tr>
+                    <td>App de banco</td>
+                    <td>Segurança, confiança, clareza em valores</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2 id="m16">16. Como criar um portfólio</h2>
+        <p>Comece com <b>3 projetos</b> completos e variados (ex.: um app mobile, um site/loja e um dashboard). <b>Case
+                study</b> é o relato da sua jornada em um projeto: não só o resultado, mas como você pensou. Estrutura:
+        </p>
+        <p><b>Problema → Pesquisa → Público → Objetivos → Processo → Wireframes → UI → Protótipo → Testes → Resultado →
+                Aprendizados.</b></p>
+        <div class="box"><b>⚠️ Atenção:</b> explique suas decisões ("escolhi X porque os testes mostraram Y"). Mostre
+            também erros e como corrigiu. Se não houver métricas reais, descreva o resultado dos testes sem inventar
+            números.</div>
+
+        <h2 id="m17">17. Projetos para iniciantes</h2>
+        <div class="w">
+            <table>
+                <tr>
+                    <th>Projeto</th>
+                    <th>Problema / funcionalidades / telas</th>
+                    <th>Nível</th>
+                    <th>Treina</th>
+                </tr>
+                <tr>
+                    <td>App de estoque</td>
+                    <td>Controle de produtos; cadastro, alertas; home, lista, detalhe, formulário</td>
+                    <td>Médio</td>
+                    <td>Fluxos, formulários</td>
+                </tr>
+                <tr>
+                    <td>App de mercado</td>
+                    <td>Compras fáceis; busca, lista, carrinho</td>
+                    <td>Fácil</td>
+                    <td>Catálogo, busca</td>
+                </tr>
+                <tr>
+                    <td>App de transporte</td>
+                    <td>Chamar corrida; mapa, preço, status</td>
+                    <td>Médio</td>
+                    <td>Estados, mapas</td>
+                </tr>
+                <tr>
+                    <td>App de faculdade</td>
+                    <td>Notas e horários; agenda, avisos</td>
+                    <td>Fácil</td>
+                    <td>Organização de informação</td>
+                </tr>
+                <tr>
+                    <td>Loja virtual</td>
+                    <td>Compra online; vitrine, produto, checkout</td>
+                    <td>Médio</td>
+                    <td>Conversão, responsividade</td>
+                </tr>
+                <tr>
+                    <td>App de receitas</td>
+                    <td>Achar receitas; busca, favoritos, passo a passo</td>
+                    <td>Fácil</td>
+                    <td>Visual, conteúdo</td>
+                </tr>
+                <tr>
+                    <td>App de academia</td>
+                    <td>Acompanhar treinos; plano, progresso</td>
+                    <td>Fácil</td>
+                    <td>Hierarquia, gráficos simples</td>
+                </tr>
+                <tr>
+                    <td>App financeiro</td>
+                    <td>Controlar gastos; resumo, categorias</td>
+                    <td>Médio</td>
+                    <td>Dados, confiança</td>
+                </tr>
+                <tr>
+                    <td>Sistema de biblioteca</td>
+                    <td>Empréstimos; catálogo, reservas</td>
+                    <td>Médio</td>
+                    <td>Sistemas, tabelas</td>
+                </tr>
+                <tr>
+                    <td>Dashboard empresarial</td>
+                    <td>Ver indicadores; gráficos, filtros</td>
+                    <td>Difícil</td>
+                    <td>Visualização de dados</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2 id="m18">18. Plano de estudos — 12 semanas</h2>
+        <div class="w">
+            <table>
+                <tr>
+                    <th>Semana</th>
+                    <th>Teoria</th>
+                    <th>Prática / projeto</th>
+                    <th>Resultado</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>O que é UI/UX, a profissão</td>
+                    <td>Analisar 3 apps</td>
+                    <td>Visão geral</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Cores e tipografia</td>
+                    <td>Paleta e hierarquia de texto</td>
+                    <td>Mini style guide</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Layout, espaçamento, grid</td>
+                    <td>Recriar uma tela simples</td>
+                    <td>Tela organizada</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Figma básico</td>
+                    <td>Frames, formas, texto</td>
+                    <td>Primeiras telas</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Componentes e Auto Layout</td>
+                    <td>Botões, cards, inputs</td>
+                    <td>Biblioteca inicial</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Fundamentos de UX e heurísticas</td>
+                    <td>Avaliação heurística</td>
+                    <td>Relatório</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Pesquisa, personas</td>
+                    <td>Entrevistas</td>
+                    <td>Personas</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Fluxos e wireframes</td>
+                    <td>Projeto 1: wireframes</td>
+                    <td>Fluxo e wireframes</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>UI e design system</td>
+                    <td>Projeto 1: telas finais</td>
+                    <td>Telas finais</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Protótipo e teste</td>
+                    <td>Testar com 5 pessoas</td>
+                    <td>Lista de melhorias</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Acessibilidade e responsividade</td>
+                    <td>Revisão do Projeto 1</td>
+                    <td>Versão final</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Case study</td>
+                    <td>Publicar o case</td>
+                    <td>1º case de portfólio</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2 id="m19">19. Roteiro para aprender Figma</h2>
+        <div class="w">
+            <table>
+                <tr>
+                    <th>Nível</th>
+                    <th>Conteúdo</th>
+                    <th>Exercício</th>
+                </tr>
+                <tr>
+                    <td>1 — Iniciante</td>
+                    <td>Interface, frames, formas, texto, imagens, layers</td>
+                    <td>Cartão de visita digital</td>
+                </tr>
+                <tr>
+                    <td>2 — Básico</td>
+                    <td>Componentes, Auto Layout, estilos, grids, protótipos</td>
+                    <td>Tela de login com protótipo</td>
+                </tr>
+                <tr>
+                    <td>3 — Intermediário</td>
+                    <td>Variants, variables, design systems, bibliotecas, responsivo</td>
+                    <td>Mini design system com 5 componentes</td>
+                </tr>
+                <tr>
+                    <td>4 — Avançado</td>
+                    <td>Dev Mode, documentação, tokens, sistemas complexos, colaboração</td>
+                    <td>Handoff completo de um projeto</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2 id="m20">20. Como conseguir o primeiro trabalho</h2>
+        <p>Caminhos: estágio, vaga júnior, freelance, projetos próprios e acadêmicos, trabalho voluntário (ONGs),
+            pequenos negócios, networking, LinkedIn e portfólio. Com pequenos clientes, ofereça resolver um problema
+            concreto ("sua página perde clientes no WhatsApp; posso melhorar?"), mostre seus projetos, combine escopo e
+            prazo por escrito e peça um depoimento ao final.</p>
+
+        <h2 id="m21">21. Como se apresentar profissionalmente</h2>
+        <div class="w">
+            <table>
+                <tr>
+                    <th>Perfil</th>
+                    <th>Título LinkedIn</th>
+                    <th>Resumo curto</th>
+                </tr>
+                <tr>
+                    <td>UI Designer</td>
+                    <td>UI Designer Jr. | Figma | Design de interfaces e Design Systems</td>
+                    <td>Crio interfaces claras e consistentes. Busco minha primeira oportunidade para contribuir com
+                        produtos digitais.</td>
+                </tr>
+                <tr>
+                    <td>UX Designer</td>
+                    <td>UX Designer Jr. | Pesquisa | Fluxos e Usabilidade</td>
+                    <td>Transformo problemas de usuários em soluções por meio de pesquisa, fluxos e testes.</td>
+                </tr>
+                <tr>
+                    <td>UI/UX Designer</td>
+                    <td>UI/UX Designer | Figma | Pesquisa, prototipagem e interfaces</td>
+                    <td>Cuido de projetos da pesquisa à interface final, com foco em usabilidade e acessibilidade.</td>
+                </tr>
+            </table>
+        </div>
+        <div class="box"><b>Mensagem para procurar oportunidades:</b> "Olá, [nome]! Sou [seu nome], UI/UX Designer em
+            início de carreira. Admiro o trabalho da [empresa] em [produto]. Montei um case sobre [tema] e gostaria de
+            saber se há oportunidades ou conselhos para quem está começando. Portfólio: [link]. Obrigado!"</div>
+        <p><b>Descrição de projeto:</b> "Criei um app de estoque para pequenos negócios. Entrevistei 5 lojistas,
+            desenhei o fluxo, testei um protótipo e reduzi o registro de venda de 6 para 3 toques."<br><b>Descrição de
+                serviços:</b> "Redesenho de telas e criação de protótipos para pequenos negócios."</p>
+
+        <h2 id="m22">22. Currículo para UI/UX</h2>
+        <p>Inclua: objetivo (1–2 linhas), formação, ferramentas, conhecimentos, projetos (com link), cursos,
+            habilidades, link do portfólio e GitHub (se tiver algo relevante). <b>Evite:</b> barras de nível de
+            habilidade, listar tudo que já viu, cursos irrelevantes, informações pessoais desnecessárias e exagerar
+            experiência. Uma página basta.</p>
+
+        <h2 id="m23">23. Habilidades importantes</h2>
+        <p><b>Hard skills:</b> Figma, UI, UX, prototipagem, wireframing, design system, pesquisa, usabilidade,
+            acessibilidade, tipografia e teoria das cores — pois são o que você entrega.</p>
+        <p><b>Soft skills:</b> comunicação (explicar decisões), organização (muitos arquivos e prazos), empatia
+            (entender usuários), pensamento crítico, resolução de problemas, apresentação, trabalho em equipe, receber
+            críticas (design é iterativo) e capacidade de pesquisa (a área muda rápido).</p>
+
+        <h2 id="m24">24. Preciso saber desenhar?</h2>
+        <p><b>Não é necessário desenho artístico.</b> Você precisa de noção de composição, organização, criatividade,
+            uso de referências e domínio das ferramentas digitais. Rabiscar caixas em wireframes basta para começar.</p>
+        <h2 id="m25">25. Preciso saber matemática?</h2>
+        <p>Não é preciso matemática avançada. Usa-se o básico: proporções, medidas, múltiplos (escala de 8 px), divisão
+            de colunas no grid e lógica para fluxos.</p>
+        <h2 id="m26">26. Preciso saber programar?</h2>
+        <div class="w">
+            <table>
+                <tr>
+                    <th>Perfil</th>
+                    <th>Vantagens</th>
+                    <th>Limitações</th>
+                </tr>
+                <tr>
+                    <td>Não programa</td>
+                    <td>Foco total em design e pesquisa</td>
+                    <td>Mais dependência para validar viabilidade</td>
+                </tr>
+                <tr>
+                    <td>Conhecimento básico (HTML/CSS)</td>
+                    <td>Melhor comunicação, designs mais viáveis</td>
+                    <td>Exige tempo extra de estudo</td>
+                </tr>
+                <tr>
+                    <td>Designer que também desenvolve</td>
+                    <td>Versatilidade; vagas híbridas</td>
+                    <td>Risco de dispersão e menos profundidade</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2 id="m27">27. Erros comuns de iniciantes</h2>
+        <div class="w">
+            <table>
+                <tr>
+                    <th>Erro</th>
+                    <th>Como evitar</th>
+                </tr>
+                <tr>
+                    <td>Só se preocupar com beleza</td>
+                    <td>Valide a clareza com testes</td>
+                </tr>
+                <tr>
+                    <td>Copiar sem entender</td>
+                    <td>Pergunte "por que isso funciona?"</td>
+                </tr>
+                <tr>
+                    <td>Muitas cores e fontes</td>
+                    <td>1 cor principal e no máximo 2 fontes</td>
+                </tr>
+                <tr>
+                    <td>Ignorar acessibilidade e usuários</td>
+                    <td>Cheque contraste; converse com usuários</td>
+                </tr>
+                <tr>
+                    <td>Não testar</td>
+                    <td>Teste com ao menos 3–5 pessoas</td>
+                </tr>
+                <tr>
+                    <td>Portfólio só de telas bonitas</td>
+                    <td>Mostre processo e decisões</td>
+                </tr>
+                <tr>
+                    <td>Usar ferramentas sem fundamentos</td>
+                    <td>Estude teoria junto com prática</td>
+                </tr>
+                <tr>
+                    <td>Querer aprender tudo de uma vez</td>
+                    <td>Siga o plano por etapas</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2 id="m28">28. Glossário (seleção)</h2>
+        <div class="w">
+            <table>
+                <tr>
+                    <th>Termo</th>
+                    <th>Explicação simples</th>
+                    <th>Exemplo</th>
+                </tr>
+                <tr>
+                    <td>UI</td>
+                    <td>Interface visual</td>
+                    <td>Botões e cores</td>
+                </tr>
+                <tr>
+                    <td>UX</td>
+                    <td>Experiência de uso</td>
+                    <td>Comprar em 3 passos</td>
+                </tr>
+                <tr>
+                    <td>User Flow</td>
+                    <td>Caminho do usuário numa tarefa</td>
+                    <td>Login → Home</td>
+                </tr>
+                <tr>
+                    <td>Wireframe</td>
+                    <td>Esboço estrutural</td>
+                    <td>Caixas e linhas</td>
+                </tr>
+                <tr>
+                    <td>Mockup</td>
+                    <td>Tela com visual final estática</td>
+                    <td>Tela colorida</td>
+                </tr>
+                <tr>
+                    <td>Protótipo</td>
+                    <td>Versão clicável</td>
+                    <td>Navegação no Figma</td>
+                </tr>
+                <tr>
+                    <td>Persona</td>
+                    <td>Usuário fictício baseado em pesquisa</td>
+                    <td>Marta, 45</td>
+                </tr>
+                <tr>
+                    <td>Journey Map</td>
+                    <td>Mapa das etapas e emoções</td>
+                    <td>Da dúvida à compra</td>
+                </tr>
+                <tr>
+                    <td>Design System</td>
+                    <td>Regras e componentes padronizados</td>
+                    <td>Biblioteca da empresa</td>
+                </tr>
+                <tr>
+                    <td>Component</td>
+                    <td>Peça reutilizável</td>
+                    <td>Botão</td>
+                </tr>
+                <tr>
+                    <td>Variant</td>
+                    <td>Versão de um componente</td>
+                    <td>Botão desabilitado</td>
+                </tr>
+                <tr>
+                    <td>Auto Layout</td>
+                    <td>Ajuste automático de espaçamento</td>
+                    <td>Botão que cresce com o texto</td>
+                </tr>
+                <tr>
+                    <td>Handoff</td>
+                    <td>Entrega ao desenvolvimento</td>
+                    <td>Arquivo com especificações</td>
+                </tr>
+                <tr>
+                    <td>Usabilidade</td>
+                    <td>Facilidade de uso</td>
+                    <td>Cadastro sem dúvidas</td>
+                </tr>
+                <tr>
+                    <td>Acessibilidade</td>
+                    <td>Uso por todas as pessoas</td>
+                    <td>Texto alternativo</td>
+                </tr>
+                <tr>
+                    <td>CTA</td>
+                    <td>Chamada para ação</td>
+                    <td>"Comprar agora"</td>
+                </tr>
+                <tr>
+                    <td>Dashboard</td>
+                    <td>Painel de indicadores</td>
+                    <td>Vendas do mês</td>
+                </tr>
+                <tr>
+                    <td>Responsive Design</td>
+                    <td>Layout que se adapta à tela</td>
+                    <td>Menu muda no celular</td>
+                </tr>
+                <tr>
+                    <td>Mobile First</td>
+                    <td>Projetar primeiro para celular</td>
+                    <td>Começar com 1 coluna</td>
+                </tr>
+                <tr>
+                    <td>MVP</td>
+                    <td>Versão mínima funcional</td>
+                    <td>Só cadastro e estoque</td>
+                </tr>
+                <tr>
+                    <td>Breakpoint</td>
+                    <td>Largura onde o layout muda</td>
+                    <td>768 px</td>
+                </tr>
+                <tr>
+                    <td>Token</td>
+                    <td>Valor de design nomeado</td>
+                    <td>cor-primaria</td>
+                </tr>
+                <tr>
+                    <td>Affordance</td>
+                    <td>Aparência que indica como usar</td>
+                    <td>Botão em relevo</td>
+                </tr>
+                <tr>
+                    <td>Feedback</td>
+                    <td>Resposta do sistema a uma ação</td>
+                    <td>"Salvo com sucesso"</td>
+                </tr>
+                <tr>
+                    <td>Heurística</td>
+                    <td>Regra prática de usabilidade</td>
+                    <td>As 10 de Nielsen</td>
+                </tr>
+                <tr>
+                    <td>Estado vazio</td>
+                    <td>Tela sem dados ainda</td>
+                    <td>"Nenhum produto cadastrado"</td>
+                </tr>
+            </table>
+        </div>
+        <p class="sub">Glossário resumido; continue ampliando-o com novos termos que encontrar nos estudos.</p>
+
+        <h2 id="m29">29. Checklist do iniciante</h2>
+        <p><b>Figma:</b> ☐ Frames ☐ Texto ☐ Imagens ☐ Componentes ☐ Auto Layout ☐ Protótipos<br>
+            <b>UI:</b> ☐ Cores ☐ Tipografia ☐ Hierarquia ☐ Espaçamento ☐ Componentes<br>
+            <b>UX:</b> ☐ Identificar problema ☐ Definir público ☐ Persona ☐ User flow ☐ Wireframe ☐ Testar interface<br>
+            <b>Portfólio:</b> ☐ 3 projetos ☐ Cases completos ☐ Explico minhas decisões ☐ Protótipos ☐ Apresentação
+            profissional
+        </p>
+
+        <h2 id="m30">30. Roadmap final</h2>
+        <p><b>Nível 1 — Descoberta:</b> entender UI, UX e a profissão<br>↓<br><b>Nível 2 — Fundamentos:</b> cores,
+            tipografia, layout, espaçamento, usabilidade<br>↓<br><b>Nível 3 — Figma:</b> dominar a
+            ferramenta<br>↓<br><b>Nível 4 — UX:</b> pesquisa, personas, fluxos, wireframes<br>↓<br><b>Nível 5 — UI:</b>
+            interfaces, componentes, Design System<br>↓<br><b>Nível 6 — Projetos:</b> criar projetos
+            completos<br>↓<br><b>Nível 7 — Portfólio:</b> cases profissionais<br>↓<br><b>Nível 8 — Mercado:</b>
+            LinkedIn, networking, estágio, emprego, freelance<br>↓<br><b>Nível 9 — Especialização:</b> escolher uma área
+            para aprofundar</p>
+
+        <h2 id="fim">Se eu estivesse começando hoje: o caminho que eu seguiria</h2>
+        <ol>
+            <li><b>Mês 1:</b> estudar fundamentos (cores, tipografia, espaçamento, heurísticas) e analisar apps do dia a
+                dia.</li>
+            <li><b>Mês 1–2:</b> aprender o básico do Figma: frames, texto, componentes, Auto Layout e protótipo simples.
+                Recriar telas conhecidas para treinar.</li>
+            <li><b>Mês 2–3:</b> fazer o primeiro projeto completo, com pesquisa, fluxo, wireframes, UI e teste com 5
+                pessoas.</li>
+            <li><b>Mês 3–4:</b> montar o portfólio com 3 cases claros, explicando decisões e aprendizados.</li>
+            <li><b>Mês 4 em diante:</b> otimizar o LinkedIn, mostrar seu trabalho, conversar com profissionais,
+                candidatar-se a estágios e vagas júnior e aceitar pequenos freelas.</li>
+        </ol>
+        <div class="box"><b>🚀 Princípio:</b> consistência vale mais que intensidade. Estude pouco todo dia, termine
+            projetos e peça feedback cedo.</div>
+    </main>
+</body>
+
+</html>
